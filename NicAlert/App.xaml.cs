@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -28,6 +29,7 @@ namespace NicAlert
         /// </summary>
         public App()
         {
+           
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
@@ -124,6 +126,7 @@ namespace NicAlert
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
+
         }
 
         // Do not add any additional code to this method

@@ -23,7 +23,7 @@
 
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="Nic_Alert_" Text="NIC ALERT!" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Domain Information" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="32"/>            
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LocalizedResources.Domain_Information, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="32"/>            
         </StackPanel>
         <!--Pivot Control-->
         <controls:Pivot Name="pvInfo" Grid.Row="1">
@@ -31,7 +31,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="Entidad Registrante" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Registering_Entity, Source={StaticResource LocalizedStrings}}" />
                     </Grid>
                 </controls:PivotItem.Header>
                 <Grid>
@@ -45,7 +45,7 @@
             <controls:PivotItem>
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="Persona Responsable" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Person_in_charge, Source={StaticResource LocalizedStrings}}" />
                     </Grid>
                 </controls:PivotItem.Header>
                 <Grid>
@@ -57,7 +57,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="Entidad Administradora" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Managing_Entity, Source={StaticResource LocalizedStrings}}" />
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -70,7 +70,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="Contacto Técnico" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Technical_Contact, Source={StaticResource LocalizedStrings}}" />
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -83,7 +83,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="Servidores DNS" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Servers_dns, Source={StaticResource LocalizedStrings}}" />
                     </Grid>
                 </controls:PivotItem.Header>
 

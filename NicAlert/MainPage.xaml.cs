@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Globalization;
 using System.Net;
 using System.Windows;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using NicAlert.Resources;
 
 namespace NicAlert
 {
@@ -16,15 +18,16 @@ namespace NicAlert
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            
             lblAlert.Text = string.Empty;
 
             if (string.IsNullOrEmpty(txtDomainName.Text))
-            {
-                lblAlert.Text = "The text must be greater than or equal to 1 char";
+            { 
+                lblAlert.Text = AppResources.Message_text_must_be_greater_than_one;
             }
             else if (txtDomainName.Text.Length > 19)
             {
-                lblAlert.Text = "The text must be less than or equal to 19 chars";
+                lblAlert.Text = AppResources.Message_text_must_be_less_than_19_chars;
             }
             else
             {
@@ -43,7 +46,7 @@ namespace NicAlert
 
             if (status == HttpStatusCode.NotFound)
             {
-                lblAlert.Text = "The domain is available";
+                lblAlert.Text = AppResources.Message_domain_available;
                 lblAlert.UpdateLayout();
             }
             if (status == HttpStatusCode.OK)

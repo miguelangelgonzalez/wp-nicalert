@@ -24,15 +24,15 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="Nic_Alert_" Text="NIC ALERT!" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Domain Searching" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="32"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LocalizedResources.Domain_Searching, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="32"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Height="32" Margin="14,10,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Gray"/>
-            <Button Content="Search" Height="72" Margin="0,222,0,0" x:Name="btnSearch" VerticalAlignment="Top" Click="button1_Click" />
+            <TextBlock Height="32" Margin="14,10,0,0" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.Name, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Gray"/>
+            <Button Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Height="72" Margin="0,222,0,0" x:Name="btnSearch" VerticalAlignment="Top" Click="button1_Click" />
             <TextBox x:Name="txtDomainName" Height="76" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="456" Margin="0,35,0,0" />
-            <toolkit:ListPicker x:Name="txtDomainType" Header="Type" Margin="14,111,16,0" Height="86" VerticalAlignment="Top">
+            <toolkit:ListPicker x:Name="txtDomainType" Header="{Binding Path=LocalizedResources.Type, Source={StaticResource LocalizedStrings}}" Margin="14,111,16,0" Height="86" VerticalAlignment="Top">
                 <sys:String>.com.ar</sys:String>
                 <sys:String>.gov.ar</sys:String>
                 <sys:String>.mil.ar</sys:String>
