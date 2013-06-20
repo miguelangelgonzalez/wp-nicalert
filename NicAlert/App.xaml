@@ -7,7 +7,12 @@
 
     <!--Application Resources-->
     <Application.Resources>
-      <NicAlert:LocalizedStrings x:Key="LocalizedStrings" />
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="Assets\Styles.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+    		<NicAlert:LocalizedStrings x:Key="LocalizedStrings" />
+    	</ResourceDictionary>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

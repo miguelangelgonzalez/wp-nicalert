@@ -43,6 +43,7 @@
             </toolkit:ListPicker>
             <TextBlock x:Name="lblAlert" Margin="14,321,16,289" TextWrapping="Wrap" Foreground="#FFF9F5F5"/>
         </Grid>
+        <ProgressBar x:Name="progressBar" Style="{StaticResource PerformanceProgressBar}" IsIndeterminate="false" VerticalAlignment="Top"/>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->
