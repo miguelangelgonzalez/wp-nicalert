@@ -16,6 +16,17 @@ namespace NicAlert
             InitializeComponent();
         }
 
+        public bool IsBusy
+        {
+            set
+            {
+                progressBar.IsIndeterminate = value;
+                txtDomainName.IsEnabled = !value;
+                txtDomainType.IsEnabled = !value;
+                btnSearch.IsEnabled = !value;
+            }
+        }
+
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             
@@ -31,6 +42,7 @@ namespace NicAlert
             }
             else
             {
+                IsBusy = true;
                 var serviceDomain = new ServiceDomain();
                 serviceDomain.SearchCompleted += ServiceDomainOnSearchCompleted;
                 var domain = string.Concat(txtDomainName.Text, txtDomainType.SelectedItem);
@@ -43,6 +55,7 @@ namespace NicAlert
         {
             lblAlert.Text = string.Empty;
             var status = domainStatusEventArgs.Status;
+            IsBusy = false;
 
             if (status == HttpStatusCode.NotFound)
             {
