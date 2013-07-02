@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{a51e567a-9828-4c6c-ab9f-e6b6ba470178}" Title="NicAlert" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="Miguel A Gonzalez" Description="NicAlert es una aplicacion windows phone que permite acceder a la información y a los trámites de los nombres de dominios '.ar' (Argentina) como están disponibles en el sitio de la Dirección Nacional del Registro de Dominios de Internet (Nic.ar)." Publisher="NicAlert">
+    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_IDENTITY_USER"/>
+      <Capability Name="ID_CAP_NETWORKING"/>
+      <Capability Name="ID_CAP_PUSH_NOTIFICATION"/>
+    </Capabilities>
+    <Tasks>
+      <DefaultTask  Name ="_default" NavigationPage="MainPage.xaml"/>
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="NicAlertToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>NicAlert</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>
