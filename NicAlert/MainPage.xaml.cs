@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Globalization;
 using System.Net;
 using System.Windows;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using NicAlert.Resources;
+using NicAlert.Support;
 
 namespace NicAlert
 {
@@ -14,6 +13,19 @@ namespace NicAlert
         public MainPage()
         {
             InitializeComponent();
+
+            Loaded += (sender, args) =>
+                          {
+                              txtDomainType.IsEnabled = false;
+                              ServiceDomain serviceDomain = new ServiceDomain();
+                              serviceDomain.StatusCompleted += (o, eventArgs) =>
+                                                                   {
+                                                                       txtDomainType.IsEnabled = true;
+
+                                                                       txtDomainType.ItemsSource = App.DomainTypes;
+                                                                   };
+                              serviceDomain.GetDomainTypes();
+                          };
         }
 
         public bool IsBusy
@@ -44,28 +56,31 @@ namespace NicAlert
             {
                 IsBusy = true;
                 var serviceDomain = new ServiceDomain();
-                serviceDomain.SearchCompleted += ServiceDomainOnSearchCompleted;
+                serviceDomain.StatusCompleted += StatusCompleted;
                 var domain = string.Concat(txtDomainName.Text, txtDomainType.SelectedItem);
                 serviceDomain.Search(domain);
             }
             lblAlert.UpdateLayout();
         }
 
-        private void ServiceDomainOnSearchCompleted(object sender, ServiceDomain.DomainStatusEventArgs domainStatusEventArgs)
+        private void StatusCompleted(object sender, StatusEventArgs eventArgs)
         {
             lblAlert.Text = string.Empty;
-            var status = domainStatusEventArgs.Status;
             IsBusy = false;
 
-            if (status == HttpStatusCode.NotFound)
+            if (eventArgs.Status == HttpStatusCode.OK)
+            {
+                NavigationService.Navigate(new Uri("/DomainDetail.xaml", UriKind.Relative));
+            }
+            else if (eventArgs.Status == HttpStatusCode.NotFound)
             {
                 lblAlert.Text = AppResources.Message_domain_available;
                 lblAlert.UpdateLayout();
             }
-            if (status == HttpStatusCode.OK)
+            else
             {
-                PhoneApplicationService.Current.State["DomainInfo"] = domainStatusEventArgs.DomainInfo;
-                NavigationService.Navigate(new Uri("/DomainDetail.xaml", UriKind.Relative));
+                lblAlert.Text = "The service is unvailable, please try later.";
+                lblAlert.UpdateLayout();
             }
         }
     }

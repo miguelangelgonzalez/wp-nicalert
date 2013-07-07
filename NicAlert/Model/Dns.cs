@@ -9,5 +9,11 @@ namespace NicAlert.Model
         public string Host { get; set; }
         [DataMember(Name = "ip", EmitDefaultValue = true)]
         public object Ip { get; set; }
+        [DataMember(Name = "owner", EmitDefaultValue = true)]
+        public string Owner { get; set; }
+        [DataMember(Name = "operator", EmitDefaultValue = true)]
+        public string Operator { get; set; }
+        [DataMember(Name = "handle", EmitDefaultValue = true)]
+        public string Handle { get; set; }
     }
 }

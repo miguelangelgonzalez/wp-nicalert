@@ -10,7 +10,7 @@
   
 */
 
-namespace NicAlert
+namespace NicAlert.Support
 {
     public class LocalizedStrings
     {
