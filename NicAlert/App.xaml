@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" 
-    xmlns:NicAlert="clr-namespace:NicAlert">
+    xmlns:NicAlert="clr-namespace:NicAlert" xmlns:Support="clr-namespace:NicAlert.Support">
 
     <!--Application Resources-->
     <Application.Resources>
@@ -11,7 +11,7 @@
     		<ResourceDictionary.MergedDictionaries>
     			<ResourceDictionary Source="Assets\Styles.xaml"/>
     		</ResourceDictionary.MergedDictionaries>
-    		<NicAlert:LocalizedStrings x:Key="LocalizedStrings" />
+    		<Support:LocalizedStrings x:Key="LocalizedStrings" />
     	</ResourceDictionary>
     </Application.Resources>
 

@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using NicAlert.Model;
 
 namespace NicAlert
 {
     public partial class App : Application
     {
+        public const string UrlRoot = "http://api.nicalert.com.ar";
+        public static DomainInfo DomainInfo { get; set; }
+        public static string[] DomainTypes { get; set; }
+        public static List<Transaction> Transaction { get; set; }
+        public static Transaction PendingTransaction { get; set; }
+        public static Entity Entity { get; set; }
+        public static People People { get; set; }
+        public static Dns Dns { get; set; }
+
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>

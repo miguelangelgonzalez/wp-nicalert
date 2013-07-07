@@ -1,7 +1,5 @@
 ﻿using System.Windows.Documents;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using NicAlert.Model;
 using NicAlert.Resources;
 
 namespace NicAlert
@@ -17,7 +15,7 @@ namespace NicAlert
         {
             base.OnNavigatedTo(e);
 
-            var domainInfo = PhoneApplicationService.Current.State["DomainInfo"] as DomainInfo;
+            var domainInfo = App.DomainInfo;
 
             if(domainInfo == null) return;
 

@@ -33,13 +33,13 @@
             <Button Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Height="72" Margin="0,222,0,0" x:Name="btnSearch" VerticalAlignment="Top" Click="button1_Click" />
             <TextBox x:Name="txtDomainName" Height="76" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="456" Margin="0,35,0,0" />
             <toolkit:ListPicker x:Name="txtDomainType" Header="{Binding Path=LocalizedResources.Type, Source={StaticResource LocalizedStrings}}" Margin="14,111,16,0" Height="86" VerticalAlignment="Top">
-                <sys:String>.com.ar</sys:String>
+                <!--<sys:String>.com.ar</sys:String>
                 <sys:String>.gov.ar</sys:String>
                 <sys:String>.mil.ar</sys:String>
                 <sys:String>.int.ar</sys:String>
                 <sys:String>.net.ar</sys:String>
                 <sys:String>.org.ar</sys:String>
-                <sys:String>.tur.ar</sys:String>
+                <sys:String>.tur.ar</sys:String>-->
             </toolkit:ListPicker>
             <TextBlock x:Name="lblAlert" Margin="14,321,16,289" TextWrapping="Wrap" Foreground="#FFF9F5F5"/>
         </Grid>
