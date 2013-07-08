@@ -2,7 +2,7 @@
 using Microsoft.Phone.Controls;
 using NicAlert.Resources;
 
-namespace NicAlert
+namespace NicAlert.View
 {
     public partial class DomainDetail : PhoneApplicationPage
     {

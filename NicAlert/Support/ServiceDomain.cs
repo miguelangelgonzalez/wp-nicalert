@@ -4,6 +4,8 @@ using System.IO;
 using System.Net;
 using System.Runtime.Serialization.Json;
 using NicAlert.Model;
+using NicAlert.Resources;
+using NicAlert.ViewModel;
 
 namespace NicAlert.Support
 {
@@ -81,7 +83,22 @@ namespace NicAlert.Support
             SetData(uri, stream => { App.DomainTypes = GetModel<string[]>(stream); });
         }
 
-        public void Search(string domain)
+        public void Search(string term, TypeSearching typeSearching)
+        {
+            var funcSearching = new Dictionary<TypeSearching, Action<string>>
+            {
+                {TypeSearching.Domain, s => SearchDomain(s) },
+                {TypeSearching.TransactionByDomain, s => GetTransactionByDomain(s) },
+                {TypeSearching.TransactionById, s => GetTransactionById(s) },
+                {TypeSearching.Entity, s => GetEntity(s) },
+                {TypeSearching.People, s => GetPeople(s) },
+                {TypeSearching.DnsServer, s => GetDnsServer(s) }
+            };
+
+            funcSearching[typeSearching].Invoke(term);
+        }
+
+        public void SearchDomain(string domain)
         {
             var uri = new Uri(String.Concat(App.UrlRoot, "/domains/", domain));
             SetData(uri, stream => { App.DomainInfo = GetModel<DomainInfo>(stream); });
@@ -117,6 +134,20 @@ namespace NicAlert.Support
             SetData(uri, stream => { App.Dns = GetModel<Dns>(stream); });
         }
 
+        public List<TypeSearchingViewModel> GetTypesSearching()
+        {
+            return new List<TypeSearchingViewModel>
+            {
+                new TypeSearchingViewModel {Text = AppResources.Domain, Value = TypeSearching.Domain},
+                new TypeSearchingViewModel {Text = AppResources.TransactionByDomain, Value = TypeSearching.TransactionByDomain},
+                new TypeSearchingViewModel {Text = AppResources.TransactionById, Value = TypeSearching.TransactionById},
+                new TypeSearchingViewModel {Text = AppResources.Entity, Value = TypeSearching.Entity},
+                new TypeSearchingViewModel {Text = AppResources.People, Value = TypeSearching.People},
+                new TypeSearchingViewModel {Text = AppResources.DnsServer, Value = TypeSearching.DnsServer},
+            };
+        }
         #endregion
+
+        
     }
 }

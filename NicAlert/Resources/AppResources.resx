@@ -135,11 +135,20 @@
   <data name="Country" xml:space="preserve">
     <value>Country: </value>
   </data>
+  <data name="DnsServer" xml:space="preserve">
+    <value>DNS Server</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>Domain</value>
+  </data>
   <data name="Domain_Information" xml:space="preserve">
     <value>Domain Information</value>
   </data>
   <data name="Domain_Searching" xml:space="preserve">
     <value>Domain Searching</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Entity</value>
   </data>
   <data name="Fax" xml:space="preserve">
     <value>Fax: </value>
@@ -161,6 +170,12 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>No results.</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>People</value>
   </data>
   <data name="Person_in_charge" xml:space="preserve">
     <value>Person in charge</value>
@@ -189,8 +204,20 @@
   <data name="Technical_Contact" xml:space="preserve">
     <value>Technical Contact</value>
   </data>
+  <data name="TransactionByDomain" xml:space="preserve">
+    <value>Transaction by Domain</value>
+  </data>
+  <data name="TransactionById" xml:space="preserve">
+    <value>Transaction by ID</value>
+  </data>
   <data name="Type" xml:space="preserve">
-    <value>Type</value>
+    <value>Type of domain</value>
+  </data>
+  <data name="Type_Searching" xml:space="preserve">
+    <value>Select a searching type</value>
+  </data>
+  <data name="Unknow_Error" xml:space="preserve">
+    <value>There was an unknow error.</value>
   </data>
   <data name="Zip_Code" xml:space="preserve">
     <value>Zip Code: </value>

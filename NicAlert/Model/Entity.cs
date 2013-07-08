@@ -3,10 +3,8 @@ using System.Runtime.Serialization;
 namespace NicAlert.Model
 {
     [DataContract]
-    public class Entity
+    public class Entity: People
     {
-        [DataMember(Name = "name")]
-        public string Name { get; set; }
         [DataMember(Name = "address")]
         public string Address { get; set; }
         [DataMember(Name = "city")]
@@ -21,8 +19,6 @@ namespace NicAlert.Model
         public string Type { get; set; }
         [DataMember(Name = "activity")]
         public string Activity { get; set; }
-        [DataMember(Name = "handle")]
-        public string Handle { get; set; }
         [DataMember(Name = "cuit")]
         public string Cuit { get; set; }
         [DataMember(Name = "dni")]

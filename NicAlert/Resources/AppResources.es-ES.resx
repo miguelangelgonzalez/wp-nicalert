@@ -135,11 +135,20 @@
   <data name="Country" xml:space="preserve">
     <value>País: </value>
   </data>
+  <data name="DnsServer" xml:space="preserve">
+    <value>Servidor DNS</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>Dominio</value>
+  </data>
   <data name="Domain_Information" xml:space="preserve">
     <value>Información de Dominio</value>
   </data>
   <data name="Domain_Searching" xml:space="preserve">
     <value>Buscar Dominio</value>
+  </data>
+  <data name="Entity" xml:space="preserve">
+    <value>Entidad</value>
   </data>
   <data name="Fax" xml:space="preserve">
     <value>Fax: </value>
@@ -161,6 +170,12 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>Nombre</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Sin Resultados.</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>Persona</value>
   </data>
   <data name="Person_in_charge" xml:space="preserve">
     <value>Persona Responsable</value>
@@ -189,8 +204,20 @@
   <data name="Technical_Contact" xml:space="preserve">
     <value>Contacto Técnico</value>
   </data>
+  <data name="TransactionByDomain" xml:space="preserve">
+    <value>Trámite por nombre dominio</value>
+  </data>
+  <data name="TransactionById" xml:space="preserve">
+    <value>Tramite por ID</value>
+  </data>
   <data name="Type" xml:space="preserve">
-    <value>Tipo</value>
+    <value>Tipo de dominio</value>
+  </data>
+  <data name="Type_Searching" xml:space="preserve">
+    <value>Seleccione un tipo de busqueda</value>
+  </data>
+  <data name="Unknow_Error" xml:space="preserve">
+    <value>Ha ocurrido un error desconocido.</value>
   </data>
   <data name="Zip_Code" xml:space="preserve">
     <value>Codigo Postal: </value>

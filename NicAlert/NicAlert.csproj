@@ -67,7 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ RelativeAnimatingContentControl.cs" />
-    <Compile Include="DomainDetail.xaml.cs">
+    <Compile Include="View\DomainDetail.xaml.cs">
       <DependentUpon>DomainDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Entity.cs" />
@@ -100,13 +100,21 @@
     <Compile Include="Support\ServiceDomain.cs" />
     <Compile Include="Support\StatusEventArgs.cs" />
     <Compile Include="Model\Transaction.cs" />
+    <Compile Include="ViewModel\TypeSearchingViewModel.cs" />
+    <Compile Include="ViewModel\TypeSearching.cs" />
+    <Compile Include="View\EntityDetail.xaml.cs">
+      <DependentUpon>EntityDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransactionDetail.xaml.cs">
+      <DependentUpon>TransactionDetail.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="DomainDetail.xaml">
+    <Page Include="View\DomainDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,6 +125,14 @@
     <Page Include="Assets\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EntityDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TransactionDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -150,9 +166,7 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

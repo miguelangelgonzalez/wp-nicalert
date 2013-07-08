@@ -115,6 +115,24 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DNS Server.
+        /// </summary>
+        public static string DnsServer {
+            get {
+                return ResourceManager.GetString("DnsServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domain.
+        /// </summary>
+        public static string Domain {
+            get {
+                return ResourceManager.GetString("Domain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Domain Information.
         /// </summary>
         public static string Domain_Information {
@@ -129,6 +147,15 @@ namespace NicAlert.Resources {
         public static string Domain_Searching {
             get {
                 return ResourceManager.GetString("Domain_Searching", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entity.
+        /// </summary>
+        public static string Entity {
+            get {
+                return ResourceManager.GetString("Entity", resourceCulture);
             }
         }
         
@@ -192,6 +219,24 @@ namespace NicAlert.Resources {
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No results..
+        /// </summary>
+        public static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People.
+        /// </summary>
+        public static string People {
+            get {
+                return ResourceManager.GetString("People", resourceCulture);
             }
         }
         
@@ -277,11 +322,47 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type.
+        ///   Looks up a localized string similar to Transaction by Domain.
+        /// </summary>
+        public static string TransactionByDomain {
+            get {
+                return ResourceManager.GetString("TransactionByDomain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transaction by ID.
+        /// </summary>
+        public static string TransactionById {
+            get {
+                return ResourceManager.GetString("TransactionById", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of domain.
         /// </summary>
         public static string Type {
             get {
                 return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a searching type.
+        /// </summary>
+        public static string Type_Searching {
+            get {
+                return ResourceManager.GetString("Type_Searching", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an unknow error..
+        /// </summary>
+        public static string Unknow_Error {
+            get {
+                return ResourceManager.GetString("Unknow_Error", resourceCulture);
             }
         }
         
