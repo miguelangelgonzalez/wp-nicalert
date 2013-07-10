@@ -115,6 +115,24 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Created At.
+        /// </summary>
+        public static string CreatedAt {
+            get {
+                return ResourceManager.GetString("CreatedAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DNS Server.
         /// </summary>
         public static string DnsServer {
@@ -196,6 +214,15 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The information is not available in this moment. .
+        /// </summary>
+        public static string Message_info_not_available {
+            get {
+                return ResourceManager.GetString("Message_info_not_available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The text must be greater than or equal to 1 char.
         /// </summary>
         public static string Message_text_must_be_greater_than_one {
@@ -214,6 +241,15 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The domain name hasn´t recent transactions recorded.
+        /// </summary>
+        public static string MessageNoFoundTransaction {
+            get {
+                return ResourceManager.GetString("MessageNoFoundTransaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -223,11 +259,38 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notes.
+        /// </summary>
+        public static string Notes {
+            get {
+                return ResourceManager.GetString("Notes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No results..
         /// </summary>
         public static string NotFound {
             get {
                 return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operador.
+        /// </summary>
+        public static string Operator {
+            get {
+                return ResourceManager.GetString("Operator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Propietario.
+        /// </summary>
+        public static string Owner {
+            get {
+                return ResourceManager.GetString("Owner", resourceCulture);
             }
         }
         
@@ -309,6 +372,15 @@ namespace NicAlert.Resources {
         public static string State {
             get {
                 return ResourceManager.GetString("State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
         

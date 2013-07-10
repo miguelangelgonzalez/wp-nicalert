@@ -29,13 +29,13 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Height="32" Margin="14,10,0,0" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.Name, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Gray"/>
+            <TextBlock Height="32" Margin="14,10,0,0" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.Name, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource PhoneTextNormalStyle}"/>
             <Button Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Height="72" Margin="-6,336,6,0" x:Name="btnSearch" VerticalAlignment="Top" Click="BtnSearchClick" />
             <TextBox x:Name="txtName" Height="76" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="456" Margin="0,35,0,0" />
-            <toolkit:ListPicker x:Name="lstTypesDomain" Header="{Binding Path=LocalizedResources.Type, Source={StaticResource LocalizedStrings}}" Margin="14,111,16,0" Height="86" VerticalAlignment="Top">
+            <toolkit:ListPicker x:Name="lstTypesDomain" IsEnabled="{Binding TypesDomainIsEnabled}" Header="{Binding Path=LocalizedResources.Type, Source={StaticResource LocalizedStrings}}" Margin="14,111,16,0" Height="86" VerticalAlignment="Top" >
             </toolkit:ListPicker>
-            <TextBlock x:Name="lblAlert" Margin="9,452,21,158" TextWrapping="Wrap" Foreground="#FFF9F5F5"/>
-            <toolkit:ListPicker x:Name="lstTypesSearching" Header="{Binding Path=LocalizedResources.Type_Searching, Source={StaticResource LocalizedStrings}}" SelectionChanged="LstTypesSearchingSelectionChanged" Height="86" Margin="14,218,16,0" VerticalAlignment="Top" >
+            <TextBlock x:Name="lblAlert" Margin="9,452,21,158" TextWrapping="Wrap"/>
+            <toolkit:ListPicker x:Name="lstTypesSearching" Header="{Binding Path=LocalizedResources.Type_Searching, Source={StaticResource LocalizedStrings}}" SelectionChanged="LstTypesSearchingSelectionChanged" Height="86" Margin="14,218,16,0" VerticalAlignment="Top">
                 <toolkit:ListPicker.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

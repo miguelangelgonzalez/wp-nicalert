@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Reflection;
 using System.Runtime.Serialization.Json;
 using NicAlert.Model;
 using NicAlert.Resources;
@@ -35,14 +37,22 @@ namespace NicAlert.Support
         {
             Exception error = e.Error;
             bool cancelled = e.Cancelled;
-            var status = (HttpStatusCode)0;
+            HttpStatusCode status = 0;
 
             if (error == null && !cancelled)
             {
                 try
                 {
-                    _funcSerializeEntity(e.Result);
-                    status = HttpStatusCode.OK;
+                    if (e.Result.Length>0)
+                    {
+                        _funcSerializeEntity(e.Result);
+                        status = HttpStatusCode.OK;    
+                    }
+                    else
+                    {
+                        status = HttpStatusCode.NoContent;    
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -68,7 +78,7 @@ namespace NicAlert.Support
             }
 
         }
-
+       
         #endregion
 
         #region Public Members
@@ -107,7 +117,7 @@ namespace NicAlert.Support
         public void GetTransactionByDomain(string domain)
         {
             var uri = new Uri(String.Concat(App.UrlRoot, "/domains/", domain, "/transactions"));
-            SetData(uri, stream => { App.Transaction = GetModel<List<Transaction>>(stream); });
+            SetData(uri, stream => { App.Transactions = GetModel<List<Transaction>>(stream); });
         }
 
         public void GetTransactionById(string id)

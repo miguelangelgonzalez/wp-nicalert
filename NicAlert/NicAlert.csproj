@@ -67,6 +67,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ RelativeAnimatingContentControl.cs" />
+    <Compile Include="View\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DomainDetail.xaml.cs">
       <DependentUpon>DomainDetail.xaml</DependentUpon>
     </Compile>
@@ -102,18 +105,16 @@
     <Compile Include="Model\Transaction.cs" />
     <Compile Include="ViewModel\TypeSearchingViewModel.cs" />
     <Compile Include="ViewModel\TypeSearching.cs" />
-    <Compile Include="View\EntityDetail.xaml.cs">
-      <DependentUpon>EntityDetail.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TransactionDetail.xaml.cs">
-      <DependentUpon>TransactionDetail.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="View\Detail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DomainDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,14 +126,6 @@
     <Page Include="Assets\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\EntityDetail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\TransactionDetail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

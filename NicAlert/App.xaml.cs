@@ -12,7 +12,7 @@ namespace NicAlert
         public const string UrlRoot = "http://api.nicalert.com.ar";
         public static DomainInfo DomainInfo { get; set; }
         public static string[] DomainTypes { get; set; }
-        public static List<Transaction> Transaction { get; set; }
+        public static List<Transaction> Transactions { get; set; }
         public static Transaction PendingTransaction { get; set; }
         public static Entity Entity { get; set; }
         public static People People { get; set; }

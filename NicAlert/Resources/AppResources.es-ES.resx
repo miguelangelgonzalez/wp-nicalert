@@ -135,6 +135,12 @@
   <data name="Country" xml:space="preserve">
     <value>País: </value>
   </data>
+  <data name="CreatedAt" xml:space="preserve">
+    <value>Creado</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
   <data name="DnsServer" xml:space="preserve">
     <value>Servidor DNS</value>
   </data>
@@ -162,6 +168,9 @@
   <data name="Message_domain_available" xml:space="preserve">
     <value>El dominio esta disponible.</value>
   </data>
+  <data name="Message_info_not_available" xml:space="preserve">
+    <value>La informacion no es disponible en estos momentos.</value>
+  </data>
   <data name="Message_text_must_be_greater_than_one" xml:space="preserve">
     <value>El texto debe ser mayor o igual a uno.</value>
   </data>
@@ -171,8 +180,17 @@
   <data name="Name" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notas</value>
+  </data>
   <data name="NotFound" xml:space="preserve">
     <value>Sin Resultados.</value>
+  </data>
+  <data name="Operator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Owner</value>
   </data>
   <data name="People" xml:space="preserve">
     <value>Persona</value>
@@ -201,6 +219,9 @@
   <data name="State" xml:space="preserve">
     <value>Provincia: </value>
   </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+  </data>
   <data name="Technical_Contact" xml:space="preserve">
     <value>Contacto Técnico</value>
   </data>
@@ -221,5 +242,8 @@
   </data>
   <data name="Zip_Code" xml:space="preserve">
     <value>Codigo Postal: </value>
+  </data>
+  <data name="MessageNoFoundTransaction" xml:space="preserve">
+    <value>El dominio no registra trámites recientemente.</value>
   </data>
 </root>

@@ -76,8 +76,8 @@ namespace NicAlert.View
             txtDns.Blocks.Add(GetItalicParagraph(AppResources.Alternative_dns, AppResources.Name + ": " + domainInfo.DnsServers.Alternate3.Host, AppResources.IP_Address + domainInfo.DnsServers.Alternate3.Ip));
 
         }
-        
-        private Paragraph GetParagraph(string leftText, string rightText)
+
+        public static Paragraph GetParagraph(string leftText, string rightText)
         {
             var paragraph = new Paragraph();
             var bold = new Bold();
