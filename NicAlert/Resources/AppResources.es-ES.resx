@@ -246,4 +246,7 @@
   <data name="MessageNoFoundTransaction" xml:space="preserve">
     <value>El dominio no registra trámites recientemente.</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Cargando...</value>
+  </data>
 </root>

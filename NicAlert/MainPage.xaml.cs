@@ -1,39 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using Microsoft.Phone.Controls;
 using NicAlert.Resources;
 using NicAlert.Support;
+using NicAlert.View;
 using NicAlert.ViewModel;
 
 namespace NicAlert
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
-        public MainPage()
-        {
-            InitializeComponent();
+        #region Private Members
+        private Popup _popup;
+        #endregion
 
+        #region Private Methods
+        private void ShowPopup()
+        {
+            _popup = new Popup {Child = new PopupSplash(), IsOpen = true};
+        }
+
+        private void StartLoadingData()
+        {
             var serviceDomain = new ServiceDomain();
+            //loading searching type
+            lstTypesSearching.ItemsSource = serviceDomain.GetTypesSearching();
+            //loading domain types
             serviceDomain.StatusCompleted += (o, eventArgs) =>
             {
                 lstTypesDomain.ItemsSource = App.DomainTypes;
+                _popup.IsOpen = false;
             };
             serviceDomain.GetDomainTypes();
-            lstTypesSearching.ItemsSource = serviceDomain.GetTypesSearching();
-        }
-
-        public bool IsBusy
-        {
-            set
-            {
-                progressBar.IsIndeterminate = value;
-                txtName.IsEnabled = !value;
-                lstTypesDomain.IsEnabled = !value;
-                btnSearch.IsEnabled = !value;
-            }
         }
 
         private void BtnSearchClick(object sender, RoutedEventArgs e)
@@ -46,7 +48,7 @@ namespace NicAlert
                 lblAlert.Text = AppResources.Unknow_Error;
             }
             else if (string.IsNullOrEmpty(txtName.Text))
-            { 
+            {
                 lblAlert.Text = AppResources.Message_text_must_be_greater_than_one;
             }
             else if ((typeSearching.Value == TypeSearching.Domain || typeSearching.Value == TypeSearching.TransactionByDomain) && txtName.Text.Length > 19)
@@ -56,7 +58,7 @@ namespace NicAlert
             else
             {
                 IsBusy = true;
-                
+
                 var serviceDomain = new ServiceDomain();
                 serviceDomain.StatusCompleted += StatusCompleted;
 
@@ -77,8 +79,6 @@ namespace NicAlert
             lblAlert.UpdateLayout();
         }
 
-
-
         private void StatusCompleted(object sender, StatusEventArgs eventArgs)
         {
             lblAlert.Text = string.Empty;
@@ -97,11 +97,11 @@ namespace NicAlert
                     case HttpStatusCode.NotFound:
                         if (typeSearching.Value == TypeSearching.Domain)
                         {
-                            lblAlert.Text = AppResources.Message_domain_available;    
+                            lblAlert.Text = AppResources.Message_domain_available;
                         }
                         else
                         {
-                            lblAlert.Text = AppResources.NotFound;    
+                            lblAlert.Text = AppResources.NotFound;
                         }
 
                         break;
@@ -112,9 +112,9 @@ namespace NicAlert
                         }
                         else
                         {
-                            lblAlert.Text = AppResources.Message_info_not_available;    
+                            lblAlert.Text = AppResources.Message_info_not_available;
                         }
-                        
+
                         break;
                     default:
                         lblAlert.Text = AppResources.Unknow_Error;
@@ -140,5 +140,32 @@ namespace NicAlert
                 DataContext = new { TypesDomainIsEnabled = isEnabled };
             }
         }
+
+        #endregion
+
+        #region Constructors
+        public MainPage()
+        {
+            InitializeComponent();
+            ShowPopup();
+            StartLoadingData();
+        }
+
+        #endregion
+
+        #region Public Methods
+        public bool IsBusy
+        {
+            set
+            {
+                progressBar.IsIndeterminate = value;
+                txtName.IsEnabled = !value;
+                lstTypesDomain.IsEnabled = !value;
+                btnSearch.IsEnabled = !value;
+            }
+        }
+
+
+        #endregion
     }
 }
