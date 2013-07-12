@@ -33,6 +33,20 @@
             <Button Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Height="72" Margin="-6,336,6,0" x:Name="btnSearch" VerticalAlignment="Top" Click="BtnSearchClick" />
             <TextBox x:Name="txtName" Height="76" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="456" Margin="0,35,0,0" />
             <toolkit:ListPicker x:Name="lstTypesDomain" IsEnabled="{Binding TypesDomainIsEnabled}" Header="{Binding Path=LocalizedResources.Type, Source={StaticResource LocalizedStrings}}" Margin="14,111,16,0" Height="86" VerticalAlignment="Top" >
+                <toolkit:ListPicker.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </toolkit:ListPicker.ItemTemplate>
+                <toolkit:ListPicker.FullModeItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock FontSize="45" Text="{Binding}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </toolkit:ListPicker.FullModeItemTemplate>
             </toolkit:ListPicker>
             <TextBlock x:Name="lblAlert" Margin="9,452,21,158" TextWrapping="Wrap"/>
             <toolkit:ListPicker x:Name="lstTypesSearching" Header="{Binding Path=LocalizedResources.Type_Searching, Source={StaticResource LocalizedStrings}}" SelectionChanged="LstTypesSearchingSelectionChanged" Height="86" Margin="14,218,16,0" VerticalAlignment="Top">
@@ -46,7 +60,7 @@
                 <toolkit:ListPicker.FullModeItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="{Binding Text}"/>
+                            <TextBlock Text="{Binding Text}" FontSize="45"/>
                         </StackPanel>
                     </DataTemplate>
                 </toolkit:ListPicker.FullModeItemTemplate>
