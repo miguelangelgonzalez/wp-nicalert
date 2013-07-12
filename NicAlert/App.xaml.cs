@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using NicAlert.Model;
+using NicAlert.Resources;
 
 namespace NicAlert
 {
@@ -29,7 +32,6 @@ namespace NicAlert
         /// </summary>
         public App()
         {
-           
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
@@ -115,6 +117,12 @@ namespace NicAlert
         {
             if (phoneApplicationInitialized)
                 return;
+
+            if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "es")
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("es-ES");
+                AppResources.Culture = Thread.CurrentThread.CurrentCulture;                
+            }
 
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.

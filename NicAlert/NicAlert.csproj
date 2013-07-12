@@ -16,7 +16,7 @@
     <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>es-ES</SupportedCultures>
+    <SupportedCultures>es-ES;es-AR</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>NicAlert.xap</XapFilename>
@@ -154,6 +154,7 @@
     <Resource Include="SplashScreen.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.es-AR.resx" />
     <EmbeddedResource Include="Resources\AppResources.es-ES.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.es-ES.Designer.cs</LastGenOutput>
