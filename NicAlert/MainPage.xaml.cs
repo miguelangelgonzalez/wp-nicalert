@@ -24,7 +24,13 @@ namespace NicAlert
         {
             _popup = new Popup {Child = new PopupSplash(), IsOpen = true};
         }
-
+        private void HidePopup()
+        {
+            if(_popup != null)
+            {
+                _popup.IsOpen = false;
+            }
+        }
         private void StartLoadingData()
         {
             var serviceDomain = new ServiceDomain();
@@ -36,14 +42,9 @@ namespace NicAlert
                 if (eventArgs.Status == HttpStatusCode.NotFound)
                 {
                     MessageBox.Show(AppResources.Message_Error_Conection, AppResources.Message_Error_Conection_Caption, MessageBoxButton.OK);
-                    lstTypesDomain.ItemsSource = new List<string> { ".com.ar", ".gov.ar", ".mil.ar", ".int.ar", ".net.ar", ".org.ar", ".tur.ar" };
                 }
-                else
-                {
-                    lstTypesDomain.ItemsSource = App.DomainTypes;    
-                }
-                
-                _popup.IsOpen = false;
+                lstTypesDomain.ItemsSource = App.DomainTypes;
+                HidePopup();
             };
             serviceDomain.GetDomainTypes();
         }
@@ -67,7 +68,7 @@ namespace NicAlert
             }
             else
             {
-                IsBusy = true;
+                ShowPopup();
 
                 var serviceDomain = new ServiceDomain();
                 serviceDomain.StatusCompleted += StatusCompleted;
@@ -92,7 +93,7 @@ namespace NicAlert
         private void StatusCompleted(object sender, StatusEventArgs eventArgs)
         {
             lblAlert.Text = string.Empty;
-            IsBusy = false;
+            HidePopup();
             var typeSearching = lstTypesSearching.SelectedItem as TypeSearchingViewModel;
 
             if (typeSearching != null)
@@ -141,13 +142,10 @@ namespace NicAlert
 
         private void LstTypesSearchingSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (e.AddedItems.Count > 0)
+            if (e.AddedItems.Count > 0 && e.RemovedItems.Count > 0)
             {
                 var item = e.AddedItems[0] as TypeSearchingViewModel;
-
-                bool isEnabled = (item != null && (item.Value == TypeSearching.Domain || item.Value == TypeSearching.TransactionByDomain));
-
-                DataContext = new { TypesDomainIsEnabled = isEnabled };
+                lstTypesDomain.IsEnabled = (item != null && (item.Value == TypeSearching.Domain || item.Value == TypeSearching.TransactionByDomain));
             }
         }
 
@@ -160,21 +158,6 @@ namespace NicAlert
             ShowPopup();
             StartLoadingData();
         }
-
-        #endregion
-
-        #region Public Methods
-        public bool IsBusy
-        {
-            set
-            {
-                progressBar.IsIndeterminate = value;
-                txtName.IsEnabled = !value;
-                lstTypesDomain.IsEnabled = !value;
-                btnSearch.IsEnabled = !value;
-            }
-        }
-
 
         #endregion
     }

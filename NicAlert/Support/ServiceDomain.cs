@@ -89,6 +89,7 @@ namespace NicAlert.Support
         #region Public Methods
         public void GetDomainTypes()
         {
+            App.DomainTypes = new string[] {".com.ar", ".gov.ar", ".mil.ar", ".int.ar", ".net.ar", ".org.ar", ".tur.ar"};
             var uri = new Uri(String.Concat(App.UrlRoot, "/domains"));
             SetData(uri, stream => { App.DomainTypes = GetModel<string[]>(stream); });
         }
