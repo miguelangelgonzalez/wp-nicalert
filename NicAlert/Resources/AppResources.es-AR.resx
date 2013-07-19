@@ -249,4 +249,10 @@
   <data name="Zip_Code" xml:space="preserve">
     <value>Codigo Postal: </value>
   </data>
+  <data name="Message_Error_Conection" xml:space="preserve">
+    <value>Error al obtener información</value>
+  </data>
+  <data name="Message_Error_Conection_Caption" xml:space="preserve">
+    <value>No se puede establecer la conexión</value>
+  </data>
 </root>

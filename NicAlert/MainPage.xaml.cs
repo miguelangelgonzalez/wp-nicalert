@@ -5,6 +5,7 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Net.NetworkInformation;
 using NicAlert.Resources;
 using NicAlert.Support;
 using NicAlert.View;
@@ -32,7 +33,16 @@ namespace NicAlert
             //loading domain types
             serviceDomain.StatusCompleted += (o, eventArgs) =>
             {
-                lstTypesDomain.ItemsSource = App.DomainTypes;
+                if (eventArgs.Status == HttpStatusCode.NotFound)
+                {
+                    MessageBox.Show(AppResources.Message_Error_Conection, AppResources.Message_Error_Conection_Caption, MessageBoxButton.OK);
+                    lstTypesDomain.ItemsSource = new List<string> { ".com.ar", ".gov.ar", ".mil.ar", ".int.ar", ".net.ar", ".org.ar", ".tur.ar" };
+                }
+                else
+                {
+                    lstTypesDomain.ItemsSource = App.DomainTypes;    
+                }
+                
                 _popup.IsOpen = false;
             };
             serviceDomain.GetDomainTypes();

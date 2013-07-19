@@ -223,6 +223,24 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to get information.
+        /// </summary>
+        public static string Message_Error_Conection {
+            get {
+                return ResourceManager.GetString("Message_Error_Conection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No data returned .
+        /// </summary>
+        public static string Message_Error_Conection_Caption {
+            get {
+                return ResourceManager.GetString("Message_Error_Conection_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The information is not available in this moment. .
         /// </summary>
         public static string Message_info_not_available {

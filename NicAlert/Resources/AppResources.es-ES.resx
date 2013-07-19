@@ -249,4 +249,10 @@
   <data name="Loading" xml:space="preserve">
     <value>Cargando...</value>
   </data>
+  <data name="Message_Error_Conection" xml:space="preserve">
+    <value>Error al obtener información</value>
+  </data>
+  <data name="Message_Error_Conection_Caption" xml:space="preserve">
+    <value>No se puede establecer la conexión</value>
+  </data>
 </root>
