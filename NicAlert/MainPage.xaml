@@ -43,9 +43,9 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid  x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock Height="32" Margin="14,111,0,0" TextWrapping="Wrap" Text="{Binding Path=LocalizedResources.Name, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <Button Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Height="72" Margin="-4,336,4,0" x:Name="btnSearch" VerticalAlignment="Top" Click="BtnSearchClick" />
+            <Button Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}, FallbackValue=Search}" Height="72" Margin="-4,336,4,0" x:Name="btnSearch" VerticalAlignment="Top" Click="BtnSearchClick" />
             <TextBox x:Name="txtName" Height="76" HorizontalAlignment="Left" Text="" VerticalAlignment="Top" Width="456" Margin="0,136,0,0" />
             <toolkit:ListPicker x:Name="lstTypesDomain" Margin="14,218,18,0" Height="86" VerticalAlignment="Top" 
                 Header="{Binding Path=LocalizedResources.Type, Source={StaticResource LocalizedStrings}}"
@@ -59,7 +59,6 @@
                 ItemTemplate="{StaticResource ItemTemplate}"
                 FullModeItemTemplate="{StaticResource FullModeItemTemplate}"/>        
         </Grid>
-        <ProgressBar x:Name="progressBar" Style="{StaticResource PerformanceProgressBar}" IsIndeterminate="false" VerticalAlignment="Top"/>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->

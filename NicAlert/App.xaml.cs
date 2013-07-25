@@ -20,12 +20,14 @@ namespace NicAlert
         public static Entity Entity { get; set; }
         public static People People { get; set; }
         public static Dns Dns { get; set; }
+        public static string Term { get; set; }
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
+
 
         /// <summary>
         /// Constructor for the Application object.

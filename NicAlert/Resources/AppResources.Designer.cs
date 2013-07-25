@@ -277,6 +277,15 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The request is invalid..
+        /// </summary>
+        public static string MessageNotAcceptable {
+            get {
+                return ResourceManager.GetString("MessageNotAcceptable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {

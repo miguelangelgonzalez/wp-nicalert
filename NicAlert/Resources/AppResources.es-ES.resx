@@ -255,4 +255,7 @@
   <data name="Message_Error_Conection_Caption" xml:space="preserve">
     <value>No se puede establecer la conexión</value>
   </data>
+  <data name="MessageNotAcceptable" xml:space="preserve">
+    <value>La solicitud enviada es inválida.</value>
+  </data>
 </root>

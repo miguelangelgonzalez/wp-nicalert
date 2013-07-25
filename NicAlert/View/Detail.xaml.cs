@@ -14,6 +14,8 @@ namespace NicAlert.View
         public Detail()
         {
             InitializeComponent();
+
+            Loaded += (sender, args) => { PageTitle.Text = App.Term; };
         }
         
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)

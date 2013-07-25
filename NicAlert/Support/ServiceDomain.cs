@@ -4,13 +4,22 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
+using System.Text;
 using NicAlert.Model;
 using NicAlert.Resources;
 using NicAlert.ViewModel;
 
 namespace NicAlert.Support
 {
+    [DataContract]
+    public class ErrorMessage
+    {
+        [DataMember(Name = "message")]
+        public object Message { get; set; }
+    }
+
     public class ServiceDomain
     {
         #region Private Members 
@@ -38,6 +47,7 @@ namespace NicAlert.Support
             Exception error = e.Error;
             bool cancelled = e.Cancelled;
             HttpStatusCode status = 0;
+            object message = null;
 
             if (error == null && !cancelled)
             {
@@ -68,13 +78,19 @@ namespace NicAlert.Support
 
                 if (webResponse != null)
                 {
+                    var stream = webResponse.GetResponseStream();
+                    if (stream.Length > 0)
+                    {
+                        var obj = GetModel<ErrorMessage>(stream);
+                        message = obj.Message;                        
+                    }
                     status = webResponse.StatusCode;
                 }
             }
 
             if (StatusCompleted != null)
             {
-                StatusCompleted(sender, new StatusEventArgs(status));
+                StatusCompleted(sender, new StatusEventArgs(status, message));
             }
 
         }
@@ -96,6 +112,8 @@ namespace NicAlert.Support
 
         public void Search(string term, TypeSearching typeSearching)
         {
+            App.Term = term;
+
             var funcSearching = new Dictionary<TypeSearching, Action<string>>
             {
                 {TypeSearching.Domain, s => SearchDomain(s) },

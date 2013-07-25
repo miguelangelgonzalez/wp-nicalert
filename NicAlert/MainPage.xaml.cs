@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Net.NetworkInformation;
+using Microsoft.Phone.Shell;
 using NicAlert.Resources;
 using NicAlert.Support;
 using NicAlert.View;
@@ -33,6 +38,8 @@ namespace NicAlert
         }
         private void StartLoadingData()
         {
+            ShowPopup();
+
             var serviceDomain = new ServiceDomain();
             //loading searching type
             lstTypesSearching.ItemsSource = serviceDomain.GetTypesSearching();
@@ -125,7 +132,38 @@ namespace NicAlert
                         {
                             lblAlert.Text = AppResources.Message_info_not_available;
                         }
-
+                        break;
+                    case HttpStatusCode.NotAcceptable:
+                        lblAlert.Text = AppResources.MessageNotAcceptable;
+                        break;
+                    case HttpStatusCode.BadRequest:
+                        if (typeSearching.Value == TypeSearching.Entity || typeSearching.Value == TypeSearching.People)
+                        {
+                            var items = eventArgs.Message as IEnumerable;
+                            var popup = new Popup
+                            {
+                                Child = new ListName(items.OfType<string>()),
+                                IsOpen = true
+                            };
+                            popup.Closed += (o, args) =>
+                            {
+                                var ctrl = ((Popup)o).Child as ListName;
+                                if (ctrl != null && !string.IsNullOrEmpty(ctrl.NameSelected))
+                                {
+                                    ShowPopup();
+                                    var serviceDomain = new ServiceDomain();
+                                    serviceDomain.StatusCompleted += (sender1, statusEventArgs) =>
+                                    {
+                                        if (statusEventArgs.Status == HttpStatusCode.OK)
+                                        {
+                                            NavigationService.Navigate(new Uri("/View/Detail.xaml?tp=" + typeSearching.Value, UriKind.Relative));
+                                        }
+                                        HidePopup();
+                                    };
+                                    serviceDomain.Search(ctrl.NameSelected, typeSearching.Value);
+                                }
+                            };
+                        }
                         break;
                     default:
                         lblAlert.Text = AppResources.Unknow_Error;
@@ -155,7 +193,7 @@ namespace NicAlert
         public MainPage()
         {
             InitializeComponent();
-            ShowPopup();
+            
             StartLoadingData();
         }
 
