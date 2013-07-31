@@ -36,10 +36,20 @@ namespace NicAlert.Support
 
         private void SetData(Uri uri, Action<Stream> action)
         {
-            var webClient = new WebClient();
-            _funcSerializeEntity += action;
-            webClient.OpenReadCompleted += WebClientOpenReadCompleted;
-            webClient.OpenReadAsync(uri);
+             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+             {
+                 var webClient = new WebClient();
+                 _funcSerializeEntity += action;
+                 webClient.OpenReadCompleted += WebClientOpenReadCompleted;
+                 webClient.OpenReadAsync(uri);                 
+             }
+             else
+             {
+                 if (StatusCompleted != null)
+                 {
+                     StatusCompleted(this, new StatusEventArgs(HttpStatusCode.ServiceUnavailable, null));
+                 } 
+             }
         }
 
         private void WebClientOpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
@@ -84,7 +94,15 @@ namespace NicAlert.Support
                         var obj = GetModel<ErrorMessage>(stream);
                         message = obj.Message;                        
                     }
-                    status = webResponse.StatusCode;
+
+                    if (webResponse.StatusCode == HttpStatusCode.NotFound && webResponse.Headers.Count == 0)
+                    {
+                        status = HttpStatusCode.ServiceUnavailable;
+                    }
+                    else
+                    {
+                        status = webResponse.StatusCode;    
+                    }
                 }
             }
 

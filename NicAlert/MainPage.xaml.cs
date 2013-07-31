@@ -165,14 +165,17 @@ namespace NicAlert
                             };
                         }
                         break;
+                    case HttpStatusCode.ServiceUnavailable:
+                        MessageBox.Show(AppResources.ServiceUnavailable, AppResources.Message_Error_Conection, MessageBoxButton.OK);
+                        break;
                     default:
-                        lblAlert.Text = AppResources.Unknow_Error;
+                        MessageBox.Show(AppResources.Unknow_Error, AppResources.Message_Error_Conection, MessageBoxButton.OK);
                         break;
                 }
             }
             else
             {
-                lblAlert.Text = AppResources.Unknow_Error;
+                MessageBox.Show(AppResources.Unknow_Error, AppResources.Message_Error_Conection, MessageBoxButton.OK);
             }
 
             lblAlert.UpdateLayout();

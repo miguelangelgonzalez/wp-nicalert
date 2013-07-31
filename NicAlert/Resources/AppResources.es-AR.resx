@@ -190,7 +190,7 @@
     <value>Notas</value>
   </data>
   <data name="NotFound" xml:space="preserve">
-    <value>Sin Resultados.</value>
+    <value>Lo sentimos, no se encontraron resultados.</value>
   </data>
   <data name="Operator" xml:space="preserve">
     <value>Operator</value>
@@ -257,5 +257,14 @@
   </data>
   <data name="MessageNotAcceptable" xml:space="preserve">
     <value>La solicitud enviada es inválida.</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Resultados posibles:</value>
+  </data>
+  <data name="ServiceUnavailable" xml:space="preserve">
+    <value>La conexión no esta disponible, por favor intenta mas tarde.</value>
   </data>
 </root>

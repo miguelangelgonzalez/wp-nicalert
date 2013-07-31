@@ -12,7 +12,7 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Width="480" Height="800" Background="{StaticResource PhoneBackgroundBrush}">
-        <TextBlock Text="Results:" Style="{StaticResource PhoneTextNormalStyle}" FontSize="40" Margin="8,28,16,0" VerticalAlignment="Top" />
+        <TextBlock Text="{Binding Path=LocalizedResources.Results, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" FontSize="40" Margin="8,28,16,0" VerticalAlignment="Top" />
         <ListBox x:Name="lstPeopleNames" SelectionChanged="PeopleNames_SelectionChanged" Margin="0" Height="600" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -22,6 +22,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Back" Margin="0,718,0,8" Click="Button_Click" VerticalAlignment="Bottom"/>
+        <Button Content="{Binding Path=LocalizedResources.Back, Source={StaticResource LocalizedStrings}}" Margin="0,718,0,8" Click="Button_Click" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>
