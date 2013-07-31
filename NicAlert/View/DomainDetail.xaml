@@ -31,7 +31,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Registering_Entity, Source={StaticResource LocalizedStrings}}" Margin="2,0,12,0" Width="329" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Registering_Entity, Source={StaticResource LocalizedStrings}}" Margin="2,0,12,0" Width="329" FontWeight="Bold" />
                     </Grid>
                 </controls:PivotItem.Header>
                 <Grid>
@@ -45,7 +45,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Person_in_charge, Source={StaticResource LocalizedStrings}}" Margin="3,0,12,0" Width="330" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Person_in_charge, Source={StaticResource LocalizedStrings}}" Margin="3,0,12,0" Width="330" FontWeight="Bold" />
                     </Grid>
                 </controls:PivotItem.Header>
                 <Grid>
@@ -57,7 +57,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Managing_Entity, Source={StaticResource LocalizedStrings}}" Margin="-6,0,12,0" Width="330" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Managing_Entity, Source={StaticResource LocalizedStrings}}" Margin="-6,0,12,0" Width="330" FontWeight="Bold" />
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -70,7 +70,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Technical_Contact, Source={StaticResource LocalizedStrings}}" Margin="4,0,12,0" Width="330" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Technical_Contact, Source={StaticResource LocalizedStrings}}" Margin="4,0,12,0" Width="330" FontWeight="Bold" />
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -83,7 +83,7 @@
             <controls:PivotItem Margin="12,28,12,0">
                 <controls:PivotItem.Header>
                     <Grid>
-                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Servers_dns, Source={StaticResource LocalizedStrings}}" Margin="5,0,12,0" Width="250" />
+                        <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Path=LocalizedResources.Servers_dns, Source={StaticResource LocalizedStrings}}" Margin="5,0,12,0" Width="250" FontWeight="Bold" />
                     </Grid>
                 </controls:PivotItem.Header>
 

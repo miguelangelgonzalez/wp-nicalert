@@ -12,8 +12,8 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Width="480" Height="800" Background="{StaticResource PhoneBackgroundBrush}">
-        <TextBlock Text="{Binding Path=LocalizedResources.Results, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" FontSize="40" Margin="8,28,16,0" VerticalAlignment="Top" />
-        <ListBox x:Name="lstPeopleNames" SelectionChanged="PeopleNames_SelectionChanged" Margin="0" Height="600" >
+        <TextBlock Text="{Binding Path=LocalizedResources.Results, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" FontSize="40" Margin="8,28,16,0" VerticalAlignment="Top" TextWrapping="Wrap" FontStyle="Italic" />
+        <ListBox x:Name="lstPeopleNames" SelectionChanged="PeopleNames_SelectionChanged" Margin="0,159,0,100">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

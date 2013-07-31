@@ -169,7 +169,7 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Domain Searching.
+        ///   Looks up a localized string similar to Start Searching.
         /// </summary>
         public static string Domain_Searching {
             get {
@@ -385,7 +385,7 @@ namespace NicAlert.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Possible Results:.
+        ///   Looks up a localized string similar to Multiple results, please select only one:.
         /// </summary>
         public static string Results {
             get {

@@ -151,7 +151,7 @@
     <value>Información de Dominio</value>
   </data>
   <data name="Domain_Searching" xml:space="preserve">
-    <value>Buscar Dominio</value>
+    <value>Comenzar Busqueda</value>
   </data>
   <data name="Entity" xml:space="preserve">
     <value>Entidad</value>
@@ -262,7 +262,7 @@
     <value>Volver</value>
   </data>
   <data name="Results" xml:space="preserve">
-    <value>Resultados posibles:</value>
+    <value>Multiples resultados, por favor selecciona uno</value>
   </data>
   <data name="ServiceUnavailable" xml:space="preserve">
     <value>La conexión no esta disponible, por favor intente mas tarde.</value>
