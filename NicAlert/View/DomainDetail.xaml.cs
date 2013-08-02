@@ -1,23 +1,23 @@
 ﻿using System.Windows.Documents;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using NicAlert.Model;
 using NicAlert.Resources;
 
-namespace NicAlert
+namespace NicAlert.View
 {
     public partial class DomainDetail : PhoneApplicationPage
     {
         public DomainDetail()
         {
             InitializeComponent();
+
+            Loaded += (sender, args) => { PageTitle.Text = App.Term; };
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            var domainInfo = PhoneApplicationService.Current.State["DomainInfo"] as DomainInfo;
+            var domainInfo = App.DomainInfo;
 
             if(domainInfo == null) return;
 
@@ -78,8 +78,8 @@ namespace NicAlert
             txtDns.Blocks.Add(GetItalicParagraph(AppResources.Alternative_dns, AppResources.Name + ": " + domainInfo.DnsServers.Alternate3.Host, AppResources.IP_Address + domainInfo.DnsServers.Alternate3.Ip));
 
         }
-        
-        private Paragraph GetParagraph(string leftText, string rightText)
+
+        public static Paragraph GetParagraph(string leftText, string rightText)
         {
             var paragraph = new Paragraph();
             var bold = new Bold();

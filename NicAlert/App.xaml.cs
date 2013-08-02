@@ -1,35 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using NicAlert.Model;
+using NicAlert.Resources;
 
 namespace NicAlert
 {
     public partial class App : Application
     {
+        public const string UrlRoot = "http://api.nicalert.com.ar";
+        public static DomainInfo DomainInfo { get; set; }
+        public static string[] DomainTypes { get; set; }
+        public static List<Transaction> Transactions { get; set; }
+        public static Transaction PendingTransaction { get; set; }
+        public static Entity Entity { get; set; }
+        public static People People { get; set; }
+        public static Dns Dns { get; set; }
+        public static string Term { get; set; }
+
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
 
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
         public App()
         {
-           
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
@@ -115,6 +119,12 @@ namespace NicAlert
         {
             if (phoneApplicationInitialized)
                 return;
+
+            if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "es")
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("es-ES");
+                AppResources.Culture = Thread.CurrentThread.CurrentCulture;                
+            }
 
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.

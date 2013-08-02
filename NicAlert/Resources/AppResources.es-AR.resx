@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -126,9 +126,6 @@
   <data name="Alternative_dns" xml:space="preserve">
     <value>Servidor alternativo: </value>
   </data>
-  <data name="Back" xml:space="preserve">
-    <value>Volver</value>
-  </data>
   <data name="City" xml:space="preserve">
     <value>Ciudad: </value>
   </data>
@@ -174,17 +171,8 @@
   <data name="MessageNoFoundTransaction" xml:space="preserve">
     <value>El dominio no registra trámites recientemente.</value>
   </data>
-  <data name="MessageNotAcceptable" xml:space="preserve">
-    <value>La solicitud enviada es inválida.</value>
-  </data>
   <data name="Message_domain_available" xml:space="preserve">
     <value>El dominio esta disponible.</value>
-  </data>
-  <data name="Message_Error_Conection" xml:space="preserve">
-    <value>Error al obtener información</value>
-  </data>
-  <data name="Message_Error_Conection_Caption" xml:space="preserve">
-    <value>No se puede establecer la conexión</value>
   </data>
   <data name="Message_info_not_available" xml:space="preserve">
     <value>La informacion no es disponible en estos momentos.</value>
@@ -225,9 +213,6 @@
   <data name="Registering_Entity" xml:space="preserve">
     <value>Entidad Registrante</value>
   </data>
-  <data name="Results" xml:space="preserve">
-    <value>Multiples resultados, por favor selecciona uno:</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Buscar</value>
   </data>
@@ -236,9 +221,6 @@
   </data>
   <data name="Servers_dns" xml:space="preserve">
     <value>Servidores DNS</value>
-  </data>
-  <data name="ServiceUnavailable" xml:space="preserve">
-    <value>La conexión no esta disponible, por favor intenta mas tarde.</value>
   </data>
   <data name="State" xml:space="preserve">
     <value>Provincia: </value>
@@ -266,5 +248,23 @@
   </data>
   <data name="Zip_Code" xml:space="preserve">
     <value>Codigo Postal: </value>
+  </data>
+  <data name="Message_Error_Conection" xml:space="preserve">
+    <value>Error al obtener información</value>
+  </data>
+  <data name="Message_Error_Conection_Caption" xml:space="preserve">
+    <value>No se puede establecer la conexión</value>
+  </data>
+  <data name="MessageNotAcceptable" xml:space="preserve">
+    <value>La solicitud enviada es inválida.</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Multiples resultados, por favor selecciona uno:</value>
+  </data>
+  <data name="ServiceUnavailable" xml:space="preserve">
+    <value>La conexión no esta disponible, por favor intenta mas tarde.</value>
   </data>
 </root>
